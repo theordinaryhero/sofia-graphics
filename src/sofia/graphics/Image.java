@@ -19,7 +19,7 @@ import android.graphics.BitmapFactory;
  * @author  Last changed by $Author: edwards $
  * @version $Date: 2012/08/21 14:16 $
  */
-public class Image
+public class Image implements ImageLike
 {
     //~ Fields ................................................................
 
@@ -42,7 +42,7 @@ public class Image
      */
     public Image(Bitmap bitmap)
     {
-        this.bitmap = bitmap;
+        this.bitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true);
     }
 
 

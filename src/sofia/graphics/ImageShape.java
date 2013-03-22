@@ -28,7 +28,7 @@ public class ImageShape
 
     private RectF bounds;
 
-    private Image image;
+    private ImageLike image;
     private Rect sourceBounds;
 
 
@@ -91,7 +91,7 @@ public class ImageShape
      * @param bounds the bounds of the shape, which will cause the image to be
      *     stretched or shrunk if necessary to fit
      */
-    public ImageShape(Image image, RectF bounds)
+    public ImageShape(ImageLike image, RectF bounds)
     {
         this.image = image;
         setBounds(bounds);
@@ -176,7 +176,7 @@ public class ImageShape
      *
      * @return the {@link Image} drawn by this shape
      */
-    public Image getImage()
+    public ImageLike getImage()
     {
         return image;
     }
@@ -200,7 +200,7 @@ public class ImageShape
      *
      * @param newImage the {@link Image} to be drawn by this shape
      */
-    public void setImage(Image newImage)
+    public void setImage(ImageLike newImage)
     {
         this.image = newImage;
         sourceBounds = null;
