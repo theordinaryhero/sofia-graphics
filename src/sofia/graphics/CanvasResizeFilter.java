@@ -54,7 +54,7 @@ public class CanvasResizeFilter extends ImageFilter
 		{
 			newColor = image1.getPixel(x, y);
 		}
-		else if (x < greaterWidth && y < greaterHeight)
+		else 
 		{
 			newColor = Color.rgb(0, 0, 0, 0);
 		}
@@ -62,6 +62,37 @@ public class CanvasResizeFilter extends ImageFilter
 		return newColor;
 		
 	}
+	@Override
+	public int getHeight()
+	{
+		int greaterHeight = 0;
+		if ( image1.getHeight() < image2.getHeight())
+		{
+			greaterHeight = image2.getHeight();
+		}
+		else
+		{
+			greaterHeight = image1.getHeight();
+		}
+		
+		return greaterHeight;
+	}
 	
+	@Override
+	public int getWidth()
+	{
+		int greaterWidth = 0;
+		
+		if ( image1.getWidth() < image2.getWidth())
+		{
+			greaterWidth = image2.getWidth();
+		}
+		else
+		{
+			greaterWidth = image1.getWidth();
+		}
+		
+		return greaterWidth;
+	}
 	
 }
